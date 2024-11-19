@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gilroy;
+}
+
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(143, 188, 143);
+}
+
+#card {
+  border-radius: 10px;
+  height: 400px;
+  width: 300px;
+  background-color: white;
+  position: relative;
+}
+
+
+#card img {
+  height: 50%;
+  width: 90%;
+  object-fit: cover;
+  object-position: center;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+#card h1 {
+  text-align: center;
+  margin: 10px 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  animation: rainbow-text 5s infinite;
+  transition: color all 0.5s ease;
+
+}
+
+#card h5 {
+  font-size: 25px;
+  margin: 20px 0px;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: red;
+}
+
+#btn-container {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+#card button {
+  background-color: rgb(49, 180, 180);
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 12px 20px;
+  border: none;
+  margin-left: 5px;
+  font-weight: 700;
+  display: inline-block;
+}
+#card #add {
+  padding-right: 33px;
+  padding-top: 13px;
+}
+
+@keyframes rainbow-text {
+  0% { color: violet; }
+  16.67% { color: indigo; }
+  33.33% { color: blue; }
+  50% { color: green; }
+  66.67% { color: yellow; }
+  83.33% { color: orange; }
+  100% { color: red; }
+}
+
+
+/* 
+#card #remove{
+ position: absolute; 
+background-color: #dadada;
+color: #111;
+}   */
+
+/* @keyframes text-fade {
+  0%, 100% { color: blue; } /* Set the initial and final state */
+  /* 50% { color: rgb(224, 33, 33); } Set the color to match your background color */
+/* } 
+
+should be present in the any text you want this effect
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-text 5s infinite, text-fade 2s
+*/
