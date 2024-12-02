@@ -11,28 +11,31 @@ const message = document.getElementById("message");
 function sendEmail() {
   const BodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone: ${phone.value}<br> Message: ${message.value}`;
   Email.send({
-    SecureToken : "798da332-2848-4a2f-bf5a-9e7daf4bc77f",
+    // SecureToken: "";
     To: "mohammedtaqiuddin4117@gmail.com",
     From: "mohammedtaqiuddin4117@gmail.com",
     Subject: subject.value,
-    Body: BodyMessage,
-  }).then((message) => {
-    if (message == "OK") {
-      swal({
-        title: "Success!",
-        text: "Data sent successfully!",
-        icon: "success",
-        button: "Done",
-      });
-    } else {
-      swal({
-        title: "Error!",
-        text: "Failed to send data",
-        icon: "error",
-        button: "Done",
-      });
-    }
-  });
+    Body: BodyMessage;
+  })
+    .then((message) => {
+      console.log(message);
+      if (message == "OK") {
+        swal({
+          title: "Success!",
+          text: "Data sent successfully!",
+          icon: "success",
+          button: "Done",
+        });
+      } else {
+        swal({
+          title: "Error!",
+          text: "Failed to send data",
+          icon: "error",
+          button: "Done",
+        });
+      }
+    })
+    .catch((err) => console.log(err));
 }
 
 function checkInputs() {
@@ -87,14 +90,12 @@ form.addEventListener("submit", (e) => {
     !email.classList.contains("error") &&
     !phone.classList.contains("error") &&
     !subject.classList.contains("error") &&
-    !message.classList.contains("error") 
+    !message.classList.contains("error")
   ) {
     sendEmail();
     form.reset();
     return false;
-  }
-  else{
-    
+  } else {
     swal({
       title: "Please fill the values!",
       text: "You clicked the button!",
